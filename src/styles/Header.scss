@@ -1,0 +1,68 @@
+@import './Index.scss';
+
+.header-container {
+    background-color: $back;
+    padding: 20px;
+    text-align: center;
+    @include flex-center;
+
+    .my-image {
+        height: 100px;
+        width: 100px;
+        border-radius: 200px;
+        overflow: hidden;
+        margin-right: 40px;
+        @include flex-center;
+
+        img {
+            border-radius: 200px;
+            animation: image-load $image-load;
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    .my-name {
+        h1 {
+            animation: name-load $name-load ease $image-load forwards;
+            opacity: 0;
+            color: #FFFFFF;
+        }
+    }
+}
+
+@keyframes image-load {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    100% {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@keyframes name-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width:500px) {
+    .header-container {
+        flex-direction: column;
+
+        .my-image {
+            margin-right: 0px;
+        }
+
+        .my-name {
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+// Variables
+$image-load: 400ms;
+$name-load: 400ms;
+$back: #2a2a2a;
+$image-box-load: $image-load+$name-load;
+$foot-load: 1s;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App {
+    height: 100vh;
+    background-color: $back;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width: 0.8em;
+}
+::-webkit-scrollbar-track{
+    background: #2c2c2c;
+
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(176, 176, 176);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(199, 199, 199);
+}
+@supports (scrollbar-color: white #2c2c2c){
+    *{
+        scrollbar-color: white #2c2c2c;
+        scrollbar-width: thin;
+    }
+}

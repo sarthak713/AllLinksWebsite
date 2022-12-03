@@ -1,0 +1,85 @@
+@import './Index.scss';
+
+.imageBoxContainer {
+    @include flex-center;
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+    margin: 20px;
+    opacity: 0;
+    animation: boxIn $image-load ease-in-out $image-box-load forwards;
+
+    a {
+        text-decoration: none;
+
+        img {
+            transition: all 0.2s ease-in;
+            cursor: pointer;
+            height: 110px;
+            width: 110px;
+        }
+    }
+
+    &:hover a img {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes boxIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:750px) {
+    .imageBoxContainer {
+        height: 120px;
+        width: 120px;
+        border-radius: 10px;
+        margin: 13px;
+
+        a {
+            img {
+                height: 85px;
+                width: 85px;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .imageBoxContainer {
+        height: 110px;
+        width: 110px;
+        border-radius: 10px;
+
+        a {
+            img {
+                height: 80px;
+                width: 80px;
+            }
+        }
+    }
+}
+
+@media (max-width:400px) {
+    .imageBoxContainer {
+        height: 30vw;
+        width: 30vw;
+        border-radius: 10px;
+
+        a {
+            img {
+                height: 22vw;
+                width: 22vw;
+            }
+        }
+    }
+}
