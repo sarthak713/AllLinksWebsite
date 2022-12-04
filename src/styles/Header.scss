@@ -12,7 +12,12 @@
         border-radius: 200px;
         overflow: hidden;
         margin-right: 40px;
+        transition: all 0.2s ease;
         @include flex-center;
+        &:hover{
+            transform: translateY(-2px);
+            box-shadow: 0px 5px 10px rgb(16, 16, 16);
+        }
 
         img {
             border-radius: 200px;
@@ -20,6 +25,7 @@
             height: 100px;
             width: 100px;
         }
+        animation: spin-box $image-load ease $image-load forwards;
     }
 
     .my-name {
@@ -28,6 +34,11 @@
             opacity: 0;
             color: #FFFFFF;
         }
+        &:hover{
+            transform: translateY(-2px);
+            text-shadow: 0px 5px 10px rgb(16, 16, 16);
+        }
+        transition: all 0.2s ease;
     }
 }
 
